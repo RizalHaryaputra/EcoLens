@@ -52,7 +52,7 @@
             <slot />
         </main>
 
-        <footer class="border-t border-white/5 bg-dark-900/50 py-12 mt-20">
+        <footer class="border-t border-white/5 bg-dark-900/50 py-12">
             <div class="container mx-auto px-6 text-center">
                 <p class="text-slate-500 text-sm mb-4">© 2025 EcoLens AI. Teknologi Hijau untuk Masa Depan.</p>
                 <div class="flex justify-center gap-6">
