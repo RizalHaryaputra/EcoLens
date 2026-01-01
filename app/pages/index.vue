@@ -36,12 +36,15 @@
             </div>
         </section>
 
-        <section id="scan-area" class="py-20 bg-white">
+        <section id="scan-area" class="py-20 bg-slate-50">
             <div class="container mx-auto px-4">
-                <div
-                    class="max-w-3xl mx-auto border-2 border-dashed border-gray-200 rounded-3xl p-12 text-center bg-slate-50">
-                    <p class="text-gray-400">Area Komponen Kamera/Upload akan ada di sini</p>
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold text-slate-900 mb-4">Coba Deteksi Sekarang</h2>
+                    <p class="text-slate-600">Teknologi AI kami siap membantu memilah sampahmu.</p>
                 </div>
+
+                <WasteScanner />
+
             </div>
         </section>
     </div>
