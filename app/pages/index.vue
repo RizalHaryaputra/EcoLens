@@ -231,10 +231,10 @@
             </div>
         </section>
 
+        <!-- Features Section -->
         <section class="py-24 bg-dark-950 relative px-2 lg:px-16">
-
             <div
-                class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[500px] bg-eco-500/20 opacity-75 rounded-[100%] blur-[100px] pointer-events-none z-0">
+                class="absolute -top-0 -left-80 w-[1000px] h-[500px] bg-eco-500/20 opacity-75 rounded-[100%] blur-[100px] pointer-events-none z-0">
             </div>
             <div class="container mx-auto px-6 z-10 relative">
                 <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
@@ -331,7 +331,7 @@
         <!-- Article Section -->
         <section class="py-24 bg-dark-950 relative px-2 lg:px-16">
             <div
-                class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[500px] bg-eco-500/20 opacity-75 rounded-[100%] blur-[100px] pointer-events-none z-0">
+                class="absolute top-0 -right-80 w-[800px] h-[500px] bg-eco-500/20 opacity-75 rounded-[100%] blur-[100px] pointer-events-none z-0">
             </div>
             <div class="container mx-auto px-6">
 
