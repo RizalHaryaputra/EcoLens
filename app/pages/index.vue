@@ -1,6 +1,113 @@
+<script setup>
+const scrollToScan = () => {
+    const el = document.getElementById('scan-area');
+    if (el) {
+        el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+};
+
+const steps = [
+    {
+        title: "1. Foto & Upload",
+        description: "Ambil foto sampah di sekitarmu atau upload gambar dari galeri. Sistem kami menerima berbagai format gambar.",
+        iconContent: `
+            <path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z" />
+            <circle cx="12" cy="13" r="3" />
+        `
+    },
+    {
+        title: "2. Analisis AI",
+        description: "Gemini AI akan memindai gambar, mengenali material (plastik, kertas, B3), dan menentukan kategori sampah.",
+        iconContent: `
+            <path stroke-linecap="round" stroke-linejoin="round" d="M7.5 3.75H6A2.25 2.25 0 0 0 3.75 6v1.5M16.5 3.75H18A2.25 2.25 0 0 1 20.25 6v1.5m0 9V18A2.25 2.25 0 0 1 18 20.25h-1.5m-9 0H6A2.25 2.25 0 0 1 3.75 18v-1.5M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+        `
+    },
+    {
+        title: "3. Solusi & Edukasi",
+        description: "Dapatkan panduan cara mengolahnya, info nilai jual, dan artikel edukasi terkait dampak lingkungannya.",
+        iconContent: `
+            <path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.77 10-10 10Z" />
+            <path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12" />
+        `
+    }
+];
+
+const features = [
+    {
+        title: "Deteksi Sampah AI",
+        description: "Teknologi Computer Vision yang mampu mengenali berbagai jenis limbah rumah tangga secara instan.",
+        iconContent: `
+        <path stroke-linecap="round" stroke-linejoin="round" d="m6.75 7.5 3 2.25-3 2.25m4.5 0h3m-9 8.25h13.5A2.25 2.25 0 0 0 21 18V6a2.25 2.25 0 0 0-2.25-2.25H5.25A2.25 2.25 0 0 0 3 6v12a2.25 2.25 0 0 0 2.25 2.25Z" />
+    `
+    },
+    {
+        title: "Chatbot Interaktif",
+        description: "Asisten virtual pintar yang siap menjawab pertanyaanmu seputar daur ulang dan isu lingkungan 24/7.",
+        iconContent: `
+        <path d="M14 9a2 2 0 0 1-2 2H6l-4 4V4c0-1.1.9-2 2-2h8a2 2 0 0 1 2 2v5Z" />
+        <path d="M18 9h2a2 2 0 0 1 2 2v11l-4-4h-6a2 2 0 0 1-2-2v-1" />
+    `
+    },
+    {
+        title: "Artikel Edukasi",
+        description: "Kumpulan artikel dan panduan praktis untuk meningkatkan wawasan tentang pelestarian alam.",
+        iconContent: `
+        <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" />
+        <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" />
+    `
+    },
+    {
+        title: "Sistem Klasifikasi",
+        description: "Pengelompokan otomatis (Organik, Anorganik, B3) untuk memudahkan proses pemilahan sampah.",
+        iconContent: `
+        <rect x="3" y="3" width="7" height="7" />
+        <rect x="14" y="3" width="7" height="7" />
+        <rect x="14" y="14" width="7" height="7" />
+        <rect x="3" y="14" width="7" height="7" />
+    `
+    }
+];
+
+const articles = [
+    {
+        image: "https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?q=80&w=600&auto=format&fit=crop",
+        category: "Daur Ulang",
+        date: "12 Jan 2026",
+        readTime: "5 Menit Baca",
+        title: "Bahaya Mikroplastik bagi Ekosistem Laut",
+        description: "Mikroplastik kini ditemukan di hampir seluruh bagian laut. Pelajari dampaknya bagi biota laut dan kesehatan manusia.",
+        link: "/blog/mikroplastik",
+        // Warna Hijau (Default Eco)
+        accentColor: "text-eco-400",
+        hoverColor: "group-hover:text-eco-400 hover:text-eco-400"
+    },
+    {
+        image: "https://images.unsplash.com/photo-1611843467160-25afb8df1074?w=600&auto=format&fit=crop&q=60",
+        category: "Panduan",
+        date: "10 Jan 2026",
+        readTime: "7 Menit Baca",
+        title: "Cara Membuat Kompos dari Sampah Dapur",
+        description: "Jangan buang sisa sayuranmu! Ubah sampah organik rumah tangga menjadi pupuk subur dengan metode sederhana ini.",
+        link: "/blog/kompos",
+        accentColor: "text-eco-400",
+        hoverColor: "group-hover:text-eco-400 hover:text-eco-400"
+    },
+    {
+        image: "https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?q=80&w=600&auto=format&fit=crop",
+        category: "Gaya Hidup",
+        date: "08 Jan 2026",
+        readTime: "4 Menit Baca",
+        title: "Tips Memulai Hidup Minim Sampah (Zero Waste)",
+        description: "Langkah-langkah kecil untuk mengurangi produksi sampah harianmu, mulai dari menolak kantong plastik.",
+        link: "/blog/zero-waste",
+        accentColor: "text-eco-400",
+        hoverColor: "group-hover:text-eco-400 hover:text-eco-400"
+    }
+];
+</script>
+
 <template>
     <div class="relative overflow-hidden">
-
         <!-- Hero Section -->
         <section class="relative pt-12 pb-20 lg:pt-16 lg:pb-32 px-2 lg:px-16">
 
@@ -39,10 +146,10 @@
 
                         <div class="flex flex-col sm:flex-row items-center gap-4 justify-center lg:justify-start">
 
-                            <button @click="scrollToScan"
+                            <NuxtLink to="/detection"
                                 class="w-full sm:w-auto px-8 py-4 bg-eco-500 hover:bg-eco-400 text-dark-950 font-bold rounded-2xl shadow-[0_0_20px_rgba(34,197,94,0.3)] hover:shadow-[0_0_30px_rgba(34,197,94,0.5)] transition-all transform">
                                 Mulai Scan Sekarang
-                            </button>
+                            </NuxtLink>
 
                             <NuxtLink to="/blog"
                                 class="w-full sm:w-auto px-8 py-4 bg-white/5 border border-white/10 text-white font-medium rounded-2xl hover:bg-white/10 backdrop-blur-md transition-all">
@@ -163,70 +270,15 @@
                 </div>
 
                 <div class="grid md:grid-cols-3 gap-8">
-                    <div
-                        class="group p-8 rounded-3xl bg-white/5 border border-white/5 hover:bg-white/10 hover:border-eco-500/30 transition-all duration-300 relative overflow-hidden">
-                        <div
-                            class="absolute -right-10 -top-10 w-32 h-32 bg-eco-500/10 rounded-full blur-3xl group-hover:bg-eco-500/20 transition-all">
-                        </div>
-                        <div
-                            class="w-14 h-14 rounded-2xl bg-dark-950 border border-white/10 flex items-center justify-center mb-6 group-hover:scale-110 group-hover:border-eco-500/50 transition-transform duration-300 shadow-lg">
+                    <StepCard v-for="(step, index) in steps" :key="index" :title="step.title"
+                        :description="step.description">
+                        <template #icon>
                             <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7 text-eco-400" viewBox="0 0 24 24"
                                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                stroke-linejoin="round">
-                                <path
-                                    d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z" />
-                                <circle cx="12" cy="13" r="3" />
+                                stroke-linejoin="round" v-html="step.iconContent">
                             </svg>
-                        </div>
-                        <h3 class="text-xl font-bold text-white mb-3 group-hover:text-eco-400 transition-colors">1. Foto
-                            & Upload</h3>
-                        <p class="text-slate-400 text-sm leading-relaxed">Ambil foto sampah di sekitarmu atau upload
-                            gambar dari galeri.</p>
-                    </div>
-
-                    <div
-                        class="group p-8 rounded-3xl bg-white/5 border border-white/5 hover:bg-white/10 hover:border-eco-500/30 transition-all duration-300 relative overflow-hidden">
-                        <div
-                            class="absolute -right-10 -top-10 w-32 h-32 bg-eco-500/10 rounded-full blur-3xl group-hover:bg-eco-500/20 transition-all">
-                        </div>
-                        <div
-                            class="w-14 h-14 rounded-2xl bg-dark-950 border border-white/10 flex items-center justify-center mb-6 group-hover:scale-110 group-hover:border-eco-500/50 transition-transform duration-300 shadow-lg">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7 text-eco-400" viewBox="0 0 24 24"
-                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                stroke-linejoin="round">
-                                <path d="M12 16a4 4 0 1 0 0-8 4 4 0 0 0 0 8z" />
-                                <path
-                                    d="M3 9a2 2 0 0 1 2-2h.93a2 2 0 0 0 1.664-.89l.812-1.22A2 2 0 0 1 10.07 4h3.86a2 2 0 0 1 1.664.89l.812 1.22A2 2 0 0 0 18.07 7H19a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V9z" />
-                                <path d="M9.5 9h.01" />
-                                <path d="M14.5 9h.01" />
-                            </svg>
-                        </div>
-                        <h3 class="text-xl font-bold text-white mb-3 group-hover:text-eco-400 transition-colors">2.
-                            Analisis AI</h3>
-                        <p class="text-slate-400 text-sm leading-relaxed">Gemini AI akan memindai gambar dan mengenali
-                            material sampah.</p>
-                    </div>
-
-                    <div
-                        class="group p-8 rounded-3xl bg-white/5 border border-white/5 hover:bg-white/10 hover:border-eco-500/30 transition-all duration-300 relative overflow-hidden">
-                        <div
-                            class="absolute -right-10 -top-10 w-32 h-32 bg-eco-500/10 rounded-full blur-3xl group-hover:bg-eco-500/20 transition-all">
-                        </div>
-                        <div
-                            class="w-14 h-14 rounded-2xl bg-dark-950 border border-white/10 flex items-center justify-center mb-6 group-hover:scale-110 group-hover:border-eco-500/50 transition-transform duration-300 shadow-lg">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7 text-eco-400" viewBox="0 0 24 24"
-                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                stroke-linejoin="round">
-                                <path
-                                    d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.77 10-10 10Z" />
-                                <path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12" />
-                            </svg>
-                        </div>
-                        <h3 class="text-xl font-bold text-white mb-3 group-hover:text-eco-400 transition-colors">3.
-                            Solusi & Edukasi</h3>
-                        <p class="text-slate-400 text-sm leading-relaxed">Dapatkan panduan cara mengolahnya dan info
-                            nilai jual.</p>
-                    </div>
+                        </template>
+                    </StepCard>
                 </div>
             </div>
         </section>
@@ -253,78 +305,17 @@
                         class="hidden md:block h-px flex-grow bg-gradient-to-r from-eco-500/50 to-transparent ml-12 mb-8">
                     </div>
                 </div>
-
                 <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-                    <div
-                        class="group p-6 rounded-2xl bg-dark-900 border border-white/5 hover:border-eco-500/50 hover:bg-dark-900/80 transition-all duration-300">
-                        <div
-                            class="w-12 h-12 rounded-lg bg-eco-500/10 flex items-center justify-center mb-4 group-hover:bg-eco-500/20 transition-colors">
+                    <FeatureCard v-for="(feature, index) in features" :key="index" :title="feature.title"
+                        :description="feature.description">
+                        <template #icon>
                             <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-eco-400" viewBox="0 0 24 24"
                                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                stroke-linejoin="round">
-                                <path d="M4 22h14a2 2 0 0 0 2-2V7.5L14.5 2H6a2 2 0 0 0-2 2v4" />
-                                <path d="M14 2v6h6" />
-                                <path d="M10 22v-8" />
-                                <path d="M6 18H4" />
-                                <path d="M14 18h2" />
+                                stroke-linejoin="round" v-html="feature.iconContent">
                             </svg>
-                        </div>
-                        <h3 class="text-xl font-bold text-white mb-2">Deteksi Sampah AI</h3>
-                        <p class="text-sm text-slate-400 leading-relaxed">Teknologi Computer Vision yang mampu mengenali
-                            berbagai jenis limbah.</p>
-                    </div>
-
-                    <div
-                        class="group p-6 rounded-2xl bg-dark-900 border border-white/5 hover:border-eco-500/50 hover:bg-dark-900/80 transition-all duration-300">
-                        <div
-                            class="w-12 h-12 rounded-lg bg-eco-500/10 flex items-center justify-center mb-4 group-hover:bg-eco-500/20 transition-colors">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-eco-400" viewBox="0 0 24 24"
-                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                stroke-linejoin="round">
-                                <path d="M14 9a2 2 0 0 1-2 2H6l-4 4V4c0-1.1.9-2 2-2h8a2 2 0 0 1 2 2v5Z" />
-                                <path d="M18 9h2a2 2 0 0 1 2 2v11l-4-4h-6a2 2 0 0 1-2-2v-1" />
-                            </svg>
-                        </div>
-                        <h3 class="text-xl font-bold text-white mb-2">Chatbot Interaktif</h3>
-                        <p class="text-sm text-slate-400 leading-relaxed">Asisten virtual pintar yang siap menjawab
-                            pertanyaanmu seputar daur ulang.</p>
-                    </div>
-
-                    <div
-                        class="group p-6 rounded-2xl bg-dark-900 border border-white/5 hover:border-eco-500/50 hover:bg-dark-900/80 transition-all duration-300">
-                        <div
-                            class="w-12 h-12 rounded-lg bg-eco-500/10 flex items-center justify-center mb-4 group-hover:bg-eco-500/20 transition-colors">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-eco-400" viewBox="0 0 24 24"
-                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                stroke-linejoin="round">
-                                <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" />
-                                <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" />
-                            </svg>
-                        </div>
-                        <h3 class="text-xl font-bold text-white mb-2">Artikel Edukasi</h3>
-                        <p class="text-sm text-slate-400 leading-relaxed">Kumpulan artikel dan panduan praktis untuk
-                            meningkatkan wawasan.</p>
-                    </div>
-
-                    <div
-                        class="group p-6 rounded-2xl bg-dark-900 border border-white/5 hover:border-eco-500/50 hover:bg-dark-900/80 transition-all duration-300">
-                        <div
-                            class="w-12 h-12 rounded-lg bg-eco-500/10 flex items-center justify-center mb-4 group-hover:bg-eco-500/20 transition-colors">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-eco-400" viewBox="0 0 24 24"
-                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                stroke-linejoin="round">
-                                <rect x="3" y="3" width="7" height="7" />
-                                <rect x="14" y="3" width="7" height="7" />
-                                <rect x="14" y="14" width="7" height="7" />
-                                <rect x="3" y="14" width="7" height="7" />
-                            </svg>
-                        </div>
-                        <h3 class="text-xl font-bold text-white mb-2">Sistem Klasifikasi</h3>
-                        <p class="text-sm text-slate-400 leading-relaxed">Pengelompokan otomatis (Organik, Anorganik,
-                            B3) untuk pemilahan sampah.</p>
-                    </div>
+                        </template>
+                    </FeatureCard>
                 </div>
-
             </div>
         </section>
 
@@ -348,121 +339,13 @@
                     </div>
                 </div>
 
-                <div class="grid lg:grid-cols-3 gap-8">
+                <div class="grid md:grid-cols-3 gap-8">
 
-                    <article
-                        class="group bg-dark-900 border border-white/5 rounded-2xl overflow-hidden hover:border-eco-500/30 transition-all duration-300 hover:shadow-[0_0_30px_rgba(34,197,94,0.1)]">
-                        <div class="relative h-48 overflow-hidden">
-                            <img src="https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?q=80&w=600&auto=format&fit=crop"
-                                alt="Sampah Plastik"
-                                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
-                            <div
-                                class="absolute top-4 left-4 bg-dark-900/80 backdrop-blur text-eco-400 text-xs font-bold px-3 py-1 rounded-full border border-white/10">
-                                Daur Ulang
-                            </div>
-                        </div>
+                    <ArticleCard v-for="(article, index) in articles" :key="index" :image="article.image"
+                        :category="article.category" :date="article.date" :readTime="article.readTime"
+                        :title="article.title" :description="article.description" :link="article.link"
+                        :accent-color="article.accentColor" :hover-color="article.hoverColor" />
 
-                        <div class="p-6">
-                            <div class="text-xs text-slate-500 mb-3 flex items-center gap-2">
-                                <span>12 Jan 2026</span> • <span>5 Menit Baca</span>
-                            </div>
-                            <h3
-                                class="text-xl font-bold text-white mb-3 group-hover:text-eco-400 transition-colors line-clamp-2">
-                                Bahaya Mikroplastik bagi Ekosistem Laut
-                            </h3>
-                            <p class="text-slate-400 text-sm mb-6 line-clamp-3">
-                                Mikroplastik kini ditemukan di hampir seluruh bagian laut. Pelajari dampaknya bagi biota
-                                laut dan kesehatan manusia.
-                            </p>
-
-                            <NuxtLink to="/blog/mikroplastik"
-                                class="inline-flex items-center gap-2 text-sm font-medium text-white hover:text-eco-400 transition-colors">
-                                Baca Selengkapnya
-                                <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none"
-                                    stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                    stroke-linejoin="round">
-                                    <path d="M5 12h14" />
-                                    <path d="m12 5 7 7-7 7" />
-                                </svg>
-                            </NuxtLink>
-                        </div>
-                    </article>
-
-                    <article
-                        class="group bg-dark-900 border border-white/5 rounded-2xl overflow-hidden hover:border-eco-500/30 transition-all duration-300 hover:shadow-[0_0_30px_rgba(34,197,94,0.1)]">
-                        <div class="relative h-48 overflow-hidden">
-                            <img src="https://images.unsplash.com/photo-1611843467160-25afb8df1074?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDR8fGdhcmRlbnxlbnwwfHwwfHx8MA%3D%3D"
-                                alt="Kompos"
-                                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
-                            <div
-                                class="absolute top-4 left-4 bg-dark-900/80 backdrop-blur text-eco-400 text-xs font-bold px-3 py-1 rounded-full border border-white/10">
-                                Panduan
-                            </div>
-                        </div>
-
-                        <div class="p-6">
-                            <div class="text-xs text-slate-500 mb-3 flex items-center gap-2">
-                                <span>10 Jan 2026</span> • <span>7 Menit Baca</span>
-                            </div>
-                            <h3
-                                class="text-xl font-bold text-white mb-3 group-hover:text-eco-400 transition-colors line-clamp-2">
-                                Cara Membuat Kompos dari Sampah Dapur
-                            </h3>
-                            <p class="text-slate-400 text-sm mb-6 line-clamp-3">
-                                Jangan buang sisa sayuranmu! Ubah sampah organik rumah tangga menjadi pupuk subur dengan
-                                metode sederhana ini.
-                            </p>
-
-                            <NuxtLink to="/blog/kompos"
-                                class="inline-flex items-center gap-2 text-sm font-medium text-white hover:text-eco-400 transition-colors">
-                                Baca Selengkapnya
-                                <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none"
-                                    stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                    stroke-linejoin="round">
-                                    <path d="M5 12h14" />
-                                    <path d="m12 5 7 7-7 7" />
-                                </svg>
-                            </NuxtLink>
-                        </div>
-                    </article>
-
-                    <article
-                        class="group bg-dark-900 border border-white/5 rounded-2xl overflow-hidden hover:border-eco-500/30 transition-all duration-300 hover:shadow-[0_0_30px_rgba(34,197,94,0.1)]">
-                        <div class="relative h-48 overflow-hidden">
-                            <img src="https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?q=80&w=600&auto=format&fit=crop"
-                                alt="Zero Waste"
-                                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
-                            <div
-                                class="absolute top-4 left-4 bg-dark-900/80 backdrop-blur text-eco-400 text-xs font-bold px-3 py-1 rounded-full border border-white/10">
-                                Gaya Hidup
-                            </div>
-                        </div>
-
-                        <div class="p-6">
-                            <div class="text-xs text-slate-500 mb-3 flex items-center gap-2">
-                                <span>08 Jan 2026</span> • <span>4 Menit Baca</span>
-                            </div>
-                            <h3
-                                class="text-xl font-bold text-white mb-3 group-hover:text-eco-400 transition-colors line-clamp-2">
-                                Tips Memulai Hidup Minim Sampah (Zero Waste)
-                            </h3>
-                            <p class="text-slate-400 text-sm mb-6 line-clamp-3">
-                                Langkah-langkah kecil untuk mengurangi produksi sampah harianmu, mulai dari menolak
-                                kantong plastik.
-                            </p>
-
-                            <NuxtLink to="/blog/zero-waste"
-                                class="inline-flex items-center gap-2 text-sm font-medium text-white hover:text-eco-400 transition-colors">
-                                Baca Selengkapnya
-                                <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none"
-                                    stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                    stroke-linejoin="round">
-                                    <path d="M5 12h14" />
-                                    <path d="m12 5 7 7-7 7" />
-                                </svg>
-                            </NuxtLink>
-                        </div>
-                    </article>
                 </div>
 
                 <div class="mt-12 text-center w-full">
@@ -670,7 +553,7 @@
                             dengan Bantuan AI.
                         </h2>
 
-                        <button @click="scrollToScan"
+                        <NuxtLink to="/detection"
                             class="group inline-flex items-center justify-center px-10 py-4 text-md md:text-lg font-bold text-white bg-gradient-to-r from-eco-500 to-teal-500 rounded-full shadow-[0_0_30px_rgba(34,197,94,0.3)] hover:shadow-[0_0_50px_rgba(34,197,94,0.5)] transition-all duration-300 hover:scale-105">
                             <span class="flex items-center gap-3">
                                 Scan Sekarang
@@ -682,7 +565,7 @@
                                     <path d="m12 5 7 7-7 7" />
                                 </svg>
                             </span>
-                        </button>
+                        </NuxtLink>
                     </div>
 
                 </div>
@@ -691,16 +574,6 @@
 
     </div>
 </template>
-
-<script setup>
-// Smooth Scroll Function
-const scrollToScan = () => {
-    const el = document.getElementById('scan-area');
-    if (el) {
-        el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
-};
-</script>
 
 <style scoped>
 /* Animasi Scan Garis Hijau */
