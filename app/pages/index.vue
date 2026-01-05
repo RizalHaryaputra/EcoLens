@@ -300,10 +300,10 @@ const articles = computed(() => allArticles.slice(0, 3));
 
                 <div class="grid md:grid-cols-3 gap-8">
 
-                    <ArticleCard v-for="(article, index) in articles" :key="index" :slug="article.slug" :image="article.image"
-                        :category="article.category" :date="article.date" :readTime="article.readTime"
-                        :title="article.title" :description="article.description" :link="article.link"
-                        :accent-color="article.accentColor" :hover-color="article.hoverColor" />
+                    <ArticleCard v-for="(article, index) in articles" :key="index" :slug="article.slug"
+                        :image="article.image" :category="article.category" :date="article.date"
+                        :readTime="article.readTime" :title="article.title" :description="article.description"
+                        :link="article.link" :accent-color="article.accentColor" :hover-color="article.hoverColor" />
 
                 </div>
 
@@ -335,15 +335,15 @@ const articles = computed(() => allArticles.slice(0, 3));
                             class="absolute -inset-1 bg-gradient-to-r from-eco-500 to-teal-500 rounded-3xl blur opacity-20 group-hover:opacity-40 transition duration-1000">
                         </div>
 
-                        <div class="relative bg-dark-950 border border-white/10 rounded-3xl overflow-hidden shadow-2xl">
+                        <div class="relative bg-dark-900 border border-white/10 rounded-2xl overflow-hidden shadow-2xl">
 
                             <div
-                                class="flex items-center justify-between px-6 py-4 bg-dark-900 border-b border-white/5">
+                                class="flex items-center justify-between px-6 py-4 bg-dark-950 border-b border-white/5">
                                 <div class="flex items-center gap-3">
                                     <div class="relative">
                                         <div
                                             class="w-10 h-10 rounded-full bg-eco-500/20 flex items-center justify-center border border-eco-500/30">
-                                            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-eco-400"
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-eco-400"
                                                 viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                                                 stroke-linecap="round" stroke-linejoin="round">
                                                 <path d="M12 8V4H8" />
@@ -354,13 +354,15 @@ const articles = computed(() => allArticles.slice(0, 3));
                                                 <path d="M9 13v2" />
                                             </svg>
                                         </div>
-                                        <div
+                                        <!-- <div
                                             class="absolute bottom-0 right-0 w-3 h-3 bg-eco-500 rounded-full border-2 border-dark-900">
-                                        </div>
+                                        </div> -->
                                     </div>
                                     <div>
                                         <h4 class="text-white font-bold text-sm">EcoBot AI</h4>
-                                        <p class="text-eco-400 text-xs">Sedang aktif...</p>
+                                        <p class="text-xs text-eco-400 flex items-center gap-1">
+                                            <span class="w-2 h-2 bg-eco-500 rounded-full animate-pulse"></span> Online
+                                        </p>
                                     </div>
                                 </div>
                                 <div class="flex gap-2">
@@ -380,10 +382,10 @@ const articles = computed(() => allArticles.slice(0, 3));
                                 </div>
 
                                 <div class="flex justify-start gap-3">
-                                    <div
+                                    <!-- <div
                                         class="w-8 h-8 rounded-full bg-eco-500/20 flex-shrink-0 flex items-center justify-center border border-eco-500/30 mt-1">
                                         <span class="text-xs">🤖</span>
-                                    </div>
+                                    </div> -->
                                     <div
                                         class="bg-eco-500/10 text-eco-100 px-5 py-3 rounded-2xl rounded-tl-none max-w-[85%] border border-eco-500/20 shadow-[0_0_15px_rgba(34,197,94,0.1)]">
                                         <p class="text-sm leading-relaxed">
@@ -397,10 +399,7 @@ const articles = computed(() => allArticles.slice(0, 3));
                                 </div>
 
                                 <div class="flex justify-start gap-3">
-                                    <div
-                                        class="w-8 h-8 rounded-full bg-eco-500/20 flex-shrink-0 flex items-center justify-center border border-eco-500/30">
-                                        <span class="text-xs">🤖</span>
-                                    </div>
+
                                     <div
                                         class="bg-dark-900 border border-white/5 px-4 py-3 rounded-2xl rounded-tl-none">
                                         <div class="flex gap-1">
@@ -414,19 +413,18 @@ const articles = computed(() => allArticles.slice(0, 3));
                                 </div>
                             </div>
 
-                            <div class="p-4 bg-dark-900 border-t border-white/5">
+                            <div class="p-4 bg-dark-950 border-t border-white/5">
                                 <div class="flex gap-3">
                                     <div
-                                        class="flex-grow bg-dark-950 border border-white/10 rounded-full h-10 px-4 flex items-center text-slate-500 text-sm">
-                                        Ketik pertanyaanmu...
+                                        class="flex-grow bg-dark-900 border border-white/10 rounded-xl h-11 px-4 flex items-center text-slate-500 text-sm">
+                                        Tanya soal sampah...
                                     </div>
                                     <div
-                                        class="w-10 h-10 rounded-full bg-eco-500 flex items-center justify-center text-dark-950 shadow-lg shadow-eco-500/20">
-                                        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24"
-                                            fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                            stroke-linejoin="round">
-                                            <path d="m22 2-7 20-4-9-9-4Z" />
-                                            <path d="M22 2 11 13" />
+                                        class="w-11 h-11 rounded-xl bg-eco-500 flex items-center justify-center text-dark-950 shadow-lg shadow-eco-500/20">
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                            stroke-width="1.5" stroke="currentColor" class="size-6">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="M6 12 3.269 3.125A59.769 59.769 0 0 1 21.485 12 59.768 59.768 0 0 1 3.27 20.875L5.999 12Zm0 0h7.5" />
                                         </svg>
                                     </div>
                                 </div>
@@ -484,11 +482,6 @@ const articles = computed(() => allArticles.slice(0, 3));
                                 <span>Saran daur ulang yang personal</span>
                             </li>
                         </ul>
-
-                        <button
-                            class="w-full sm:w-auto px-8 py-4 bg-eco-500 hover:bg-eco-400 text-dark-950 font-bold rounded-2xl shadow-[0_0_20px_rgba(34,197,94,0.3)] hover:shadow-[0_0_30px_rgba(34,197,94,0.5)] transition-all transform">
-                            Chat dengan EcoBot AI
-                        </button>
                     </div>
 
                 </div>
