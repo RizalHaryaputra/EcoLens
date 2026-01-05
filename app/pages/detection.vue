@@ -13,8 +13,8 @@
 
         <div class="container mx-auto px-4 relative z-10">
 
-            <div class="text-center max-w-2xl mx-auto mb-12">
-                <div
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <!-- <div
                     class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-eco-400 text-xs font-semibold mb-6 backdrop-blur-md">
                     <span class="relative flex h-2 w-2">
                         <span
@@ -22,7 +22,7 @@
                         <span class="relative inline-flex rounded-full h-2 w-2 bg-eco-500"></span>
                     </span>
                     System Ready
-                </div>
+                </div> -->
 
                 <h1 class="text-3xl md:text-5xl font-bold text-white mb-6">
                     AI Waste <span
@@ -88,7 +88,7 @@
 <script setup>
 // Mengatur Title Halaman agar muncul di Tab Browser
 useHead({
-    title: 'Deteksi Sampah - EcoLens AI',
+    title: 'Deteksi Sampah - EcoLens',
     meta: [
         { name: 'description', content: 'Scan sampahmu menggunakan AI dan dapatkan solusi daur ulang.' }
     ]

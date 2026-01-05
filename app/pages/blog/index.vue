@@ -19,7 +19,7 @@
                         class="text-transparent bg-clip-text bg-gradient-to-r from-eco-400 to-teal-400">Lingkungan</span>
                 </h1>
                 <p class="text-slate-400 text-lg">
-                    Temukan panduan daur ulang, tips gaya hidup zero-waste, dan inovasi teknologi hijau terkini di sini.
+                    Temukan panduan daur ulang, tips gaya hidup zero-waste, dan inovasi teknologi hijau menarik dan terkini di sini.
                 </p>
             </div>
 
