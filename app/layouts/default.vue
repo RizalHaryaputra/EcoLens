@@ -61,8 +61,10 @@
                 </div>
             </div>
         </footer>
-
+        <ChatBot />
     </div>
+
+
 </template>
 
 <style scoped>
