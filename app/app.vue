@@ -1,6 +1,7 @@
 <script setup>
 // Import custom css
 import '~/assets/css/main.css'
+import { Analytics } from '@vercel/analytics/nuxt';
 
 useHead({
   link: [
@@ -23,6 +24,7 @@ useSeoMeta({
 </script>
 
 <template>
+  <Analytics />
   <NuxtLayout>
     <NuxtPage />
   </NuxtLayout>
