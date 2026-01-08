@@ -41,7 +41,7 @@ EcoLens adalah aplikasi web progresif yang menggabungkan **Kecerdasan Buatan (AI
 3.  **Konfigurasi Environment Variable**
     Buat file `.env` di direktori akar dan tambahkan API Key Gemini Anda:
     ```env
-    NUXT_GEMINI_API_KEY=masukkan_api_key_anda_disini
+    GEMINI_API_KEY=masukkan_api_key_anda_disini
     ```
 
 4.  **Jalankan Server Development**
