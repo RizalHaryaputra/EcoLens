@@ -1,8 +1,32 @@
 <script setup>
+useSeoMeta({
+    title: 'Beranda',
+    ogTitle: 'EcoLens - Deteksi Sampah dengan AI',
+    description: 'Ubah cara kamu memilah sampah dengan kecerdasan buatan. Scan sampahmu sekarang dan selamatkan bumi!',
+    ogDescription: 'Ubah cara kamu memilah sampah dengan kecerdasan buatan. Scan sampahmu sekarang dan selamatkan bumi!',
+    ogImage: 'https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8c2F2ZSUyMGVhcnRofGVufDB8fDB8fHww', 
+    twitterCard: 'summary_large_image',
+})
+
 useHead({
-    title: 'EcoLens',
-    meta: [
-        { name: 'description', content: 'EcoLens adalah platform deteksi sampah menggunakan AI untuk membantu daur ulang dan edukasi lingkungan.' }
+    script: [
+        {
+            type: 'application/ld+json',
+            children: JSON.stringify({
+                "@context": "https://schema.org",
+                "@type": "WebApplication",
+                "name": "EcoLens",
+                "url": "https://www.ecolens.my.id/",
+                "description": "Aplikasi AI untuk mendeteksi dan memilah jenis sampah.",
+                "applicationCategory": "UtilitiesApplication",
+                "operatingSystem": "All",
+                "offers": {
+                    "@type": "Offer",
+                    "price": "0",
+                    "priceCurrency": "IDR"
+                }
+            })
+        }
     ]
 })
 

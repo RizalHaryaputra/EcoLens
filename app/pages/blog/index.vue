@@ -61,7 +61,8 @@
 
             <div v-else class="text-center py-20 bg-white/5 rounded-3xl border border-white/5 border-dashed">
                 <div class="flex items-center justify-center text-center mb-6 ">
-                    <div class="rounded-full bg-eco-500/20 border border-eco-500/30 w-16 h-16 flex items-center justify-center">
+                    <div
+                        class="rounded-full bg-eco-500/20 border border-eco-500/30 w-16 h-16 flex items-center justify-center">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                             stroke="currentColor" class="size-8 text-eco-400">
                             <path stroke-linecap="round" stroke-linejoin="round"
@@ -160,12 +161,11 @@ const resetFilters = () => {
     currentPage.value = 1;
 };
 
-// SEO Meta
-useHead({
-    title: 'Blog & Edukasi - EcoLens',
-    meta: [
-        { name: 'description', content: 'Kumpulan artikel edukasi tentang daur ulang, lingkungan, dan gaya hidup hijau.' }
-    ]
+useSeoMeta({
+    title: 'Pusat Edukasi Lingkungan',
+    ogTitle: 'Blog & Tips Zero Waste - EcoLens',
+    description: 'Kumpulan artikel panduan daur ulang, tips gaya hidup minim sampah, dan inovasi teknologi hijau terkini.',
+    ogDescription: 'Pelajari cara mendaur ulang dan hidup lebih hijau bersama komunitas EcoLens.',
 })
 </script>
 

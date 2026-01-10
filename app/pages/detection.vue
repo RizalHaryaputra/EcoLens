@@ -86,11 +86,11 @@
 </template>
 
 <script setup>
-// Mengatur Title Halaman agar muncul di Tab Browser
-useHead({
-    title: 'Deteksi Sampah - EcoLens',
-    meta: [
-        { name: 'description', content: 'Scan sampahmu menggunakan AI dan dapatkan solusi daur ulang.' }
-    ]
+useSeoMeta({
+    title: 'Scan & Deteksi Sampah AI',
+    ogTitle: 'Cek Jenis Sampahmu dengan AI - EcoLens',
+    description: 'Bingung ini sampah organik atau anorganik? Foto sampahmu dan biarkan AI EcoLens memberitahu cara mengelolanya dalam hitungan detik.',
+    ogDescription: 'Bingung ini sampah organik atau anorganik? Foto sampahmu dan biarkan AI EcoLens memberitahu cara mengelolanya.',
+    twitterCard: 'summary_large_image',
 })
 </script>

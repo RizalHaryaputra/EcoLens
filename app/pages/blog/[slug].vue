@@ -184,8 +184,14 @@ const article = computed(() => {
     return articles.find(a => a.slug === route.params.slug);
 });
 
-useHead({
-    title: article.value ? `${article.value.title} - EcoLens Blog` : 'Artikel Tidak Ditemukan',
+useSeoMeta({
+    title: () => article.value?.title || 'Artikel Edukasi',
+    ogTitle: () => `${article.value?.title} - EcoLens Blog`,
+    description: () => article.value?.excerpt || 'Baca artikel lengkap mengenai tips lingkungan dan pengelolaan sampah di EcoLens.',
+    ogDescription: () => article.value?.excerpt || 'Tips lingkungan dan pengelolaan sampah terbaru.',
+    ogImage: () => article.value?.image || 'https://www.ecolens.my.id/og-default-blog.jpg',
+    ogType: 'article',
+    twitterCard: 'summary_large_image',
 })
 </script>
 

@@ -3,15 +3,15 @@
 import '~/assets/css/main.css'
 import { Analytics } from '@vercel/analytics/nuxt';
 
-useHead({
-  link: [
-    {
-      rel: 'icon',
-      type: 'image/png',
-      href: '/images/ecolens.png'
-    }
-  ]
-})
+// useHead({
+//   link: [
+//     {
+//       rel: 'icon',
+//       type: 'image/png',
+//       href: '/images/ecolens.png'
+//     }
+//   ]
+// })
 
 useSeoMeta({
   title: 'EcoLens',

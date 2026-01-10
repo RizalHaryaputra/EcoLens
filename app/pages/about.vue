@@ -280,10 +280,11 @@ const stats = [
     { value: '24/7', label: 'Edukasi Bot' }
 ];
 
-useHead({
-    title: 'Tentang Kami - EcoLens',
-    meta: [
-        { name: 'description', content: 'Mengenal tim dan visi misi di balik EcoLens, aplikasi pemilah sampah berbasis AI.' }
-    ]
+useSeoMeta({
+    title: 'Tentang Kami - Misi & Teknologi di Balik EcoLens',
+    ogTitle: 'Mengenal EcoLens: Solusi Cerdas untuk Bumi yang Lebih Hijau',
+    description: 'Pelajari visi EcoLens dalam mengatasi krisis sampah melalui teknologi Gemini AI. Dibuat dengan dedikasi untuk mengedukasi masyarakat tentang pemilahan sampah yang benar.',
+    ogDescription: 'Pelajari visi EcoLens dalam mengatasi krisis sampah melalui teknologi Gemini AI. Dibuat dengan dedikasi untuk mengedukasi masyarakat.',
+    twitterCard: 'summary_large_image',
 })
 </script>
