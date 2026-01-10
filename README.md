@@ -1,75 +1,64 @@
-# Nuxt Minimal Starter
+# 🌿 EcoLens AI - Smart Waste Management Assistant
 
-Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+EcoLens adalah aplikasi web progresif yang menggabungkan **Kecerdasan Buatan (AI)** dengan misi pelestarian lingkungan. Aplikasi ini membantu pengguna mengidentifikasi jenis sampah melalui foto dan memberikan panduan edukasi pengelolaan sampah yang tepat.
 
-## Setup
+![Vercel Deployment](https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)
+![Nuxt.js](https://img.shields.io/badge/Nuxt.js-00DC82?style=for-the-badge&logo=nuxtdotjs&logoColor=white)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38BDF8?style=for-the-badge&logo=tailwindcss&logoColor=white)
 
-Make sure to install dependencies:
+---
 
-```bash
-# npm
-npm install
+## ✨ Fitur Utama
 
-# pnpm
-pnpm install
+* **🔍 AI Waste Detection**: Identifikasi jenis sampah (Organik, Anorganik, B3) secara instan menggunakan Google Gemini 1.5 Flash Vision API.
+* **🤖 EcoBot Assistant**: Chatbot asisten lingkungan yang siap menjawab pertanyaan seputar daur ulang dan gaya hidup *Zero Waste*.
+* **📚 Pusat Edukasi**: Blog terintegrasi dengan fitur pencarian dan kategori untuk artikel-artikel lingkungan.
+* **📱 Mobile First Design**: Antarmuka responsif dan modern dengan dukungan navigasi mobile yang intuitif.
+* **🌙 Dark Mode Aesthetic**: Desain visual futuristik dengan skema warna gelap dan aksen hijau yang nyaman di mata.
+* **🔄 Persistent Chat**: Riwayat percakapan dengan chatbot tersimpan aman di penyimpanan lokal browser.
 
-# yarn
-yarn install
+## 🚀 Tech Stack
 
-# bun
-bun install
-```
+* **Frontend**: [Nuxt 4](https://nuxt.com/) (Vue.js Framework)
+* **Styling**: [Tailwind CSS](https://tailwindcss.com/)
+* **AI Engine**: [Google Gemini AI](https://ai.google.dev/) (Generative AI SDK)
+* **Analytics**: Vercel Web Analytics
+* **Deployment**: Vercel
 
-## Development Server
+## 🛠️ Cara Menjalankan Lokal
 
-Start the development server on `http://localhost:3000`:
+1.  **Clone Repository**
+    ```bash
+    git clone https://github.com/rizalharyaputra/ecolens.git
+    cd ecolens
+    ```
 
-```bash
-# npm
-npm run dev
+2.  **Install Dependencies**
+    ```bash
+    npm install
+    ```
 
-# pnpm
-pnpm dev
+3.  **Konfigurasi Environment Variable**
+    Buat file `.env` di direktori akar dan tambahkan API Key Gemini Anda:
+    ```env
+    GEMINI_API_KEY=masukkan_api_key_anda_disini
+    ```
 
-# yarn
-yarn dev
+4.  **Jalankan Server Development**
+    ```bash
+    npm run dev
+    ```
+    Buka [http://localhost:3000](http://localhost:3000) di browser Anda.
 
-# bun
-bun run dev
-```
+## 📸 Tampilan Aplikasi
 
-## Production
+* **Halaman Deteksi**: Area unggah foto dengan hasil analisis mendalam (tipe sampah, langkah pengelolaan, dan fakta unik).
+* **EcoBot**: Jendela chat melayang dengan modal konfirmasi hapus riwayat kustom.
+* **Tentang Kami**: Profil pengembang dan visi misi proyek.
 
-Build the application for production:
+## 📝 Lisensi
 
-```bash
-# npm
-npm run build
+Proyek ini dibuat untuk tujuan edukasi dan pelestarian lingkungan.
 
-# pnpm
-pnpm build
-
-# yarn
-yarn build
-
-# bun
-bun run build
-```
-
-Locally preview production build:
-
-```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+---
+Dibuat dengan 💚 oleh [Rizal Haryaputra](https://github.com/rizalharyaputra)
