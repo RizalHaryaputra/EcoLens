@@ -3,6 +3,13 @@ export default defineNuxtConfig({
   compatibilityDate: '2025-07-15',
   devtools: { enabled: true },
 
+  site: {
+    url: 'https://ecolens.my.id',
+    name: 'EcoLens',
+    description: 'Aplikasi deteksi jenis sampah berbasis AI (Gemini Vision) untuk membantu pemilahan sampah dan edukasi lingkungan.',
+    image: '/images/ecolens.png',
+  },
+
   modules: [
     '@nuxtjs/tailwindcss',
     '@nuxtjs/sitemap',
