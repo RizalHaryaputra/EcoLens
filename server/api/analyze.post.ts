@@ -9,7 +9,7 @@ export default defineEventHandler(async (event) => {
 
     const genAI = new GoogleGenerativeAI(config.GEMINI_API_KEY);
 
-    const model = genAI.getGenerativeModel({ model: "gemini-3-flash-preview" });
+    const model = genAI.getGenerativeModel({ model: "gemini-2.5-flash" });
 
     const body = await readBody(event);
     const { imageBase64 } = body;

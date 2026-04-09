@@ -235,7 +235,7 @@
                                     </svg>
                                     GitHub
                                 </a>
-                                <a href="https://rizalharyaputra.vercel.app/" target="_blank"
+                                <a href="https://rizalharyaputra.my.id/" target="_blank"
                                     class="flex items-center gap-2 px-6 py-2.5 rounded-xl border border-white/20 text-white font-medium hover:bg-white/10 transition-all">
                                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                         stroke-width="1.5" stroke="currentColor" class="size-6">

@@ -11,7 +11,7 @@ export default defineEventHandler(async (event) => {
 
         const config = useRuntimeConfig();
         const genAI = new GoogleGenerativeAI(config.GEMINI_API_KEY);
-        const model = genAI.getGenerativeModel({ model: "gemini-3-flash-preview" });
+        const model = genAI.getGenerativeModel({ model: "gemini-2.5-flash" });
 
         // --- SYSTEM INSTRUCTION ---
         const systemInstruction = `
