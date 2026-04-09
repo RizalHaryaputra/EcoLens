@@ -157,7 +157,7 @@
 
                     <div
                         class="bg-dark-900 border border-white/10 px-8 py-4 rounded-full flex items-center gap-4 hover:border-blue-500/50 hover:shadow-[0_0_20px_rgba(59,130,246,0.2)] transition-all group">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Gemini_sparkle_v002.svg/640px-Gemini_sparkle_v002.svg.png"
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/1/1d/Google_Gemini_icon_2025.svg"
                             class="w-8 h-8" alt="Gemini AI">
                         <span class="text-white font-bold group-hover:text-blue-400 transition-colors">Gemini AI</span>
                     </div>
